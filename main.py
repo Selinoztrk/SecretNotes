@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import base64
 
+#cryptography
 def encode(key, clear):
     enc = []
     for i in range(len(clear)):
@@ -19,6 +20,7 @@ def decode(key, enc):
         dec.append(dec_c)
     return "".join(dec)
 
+#save notes
 def save_and_encrypt_notes():
     title = title_entry.get()
     message = input_text.get("1.0", END)
@@ -41,6 +43,7 @@ def save_and_encrypt_notes():
             input_text.delete("1.0", END)
 
 
+#decrypt notes
 def decrypt_notes():
     message_encrypted = input_text.get("1.0", END)
     master_secret = master_entry.get()
